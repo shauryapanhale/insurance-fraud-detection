@@ -1,0 +1,25 @@
+2026-02-18 20:59:17,634 [INFO] Health check called
+2026-02-18 21:01:40,023 [INFO] Health check called
+2026-02-18 21:01:47,979 [INFO] Health check called
+2026-02-18 21:04:59,785 [INFO] Health check called
+2026-02-18 21:06:49,377 [ERROR] Validation error: [{'type': 'int_parsing', 'loc': ('body', 'Deductible'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': 'wrong_value'}]
+2026-02-18 21:07:09,865 [WARNING] 404 Not Found: http://127.0.0.1:8000/wrongurl
+2026-02-18 21:09:44,914 [INFO] Health check called
+2026-02-18 21:10:09,901 [ERROR] Validation error: [{'type': 'int_parsing', 'loc': ('body', 'Deductible'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': 'wrong_value'}]
+2026-02-18 21:10:28,847 [INFO] Prediction request: {'Deductible': 400, 'Days_Policy_Accident': 'more than 30', 'PastNumberOfClaims': 'none', 'Days_Policy_Claim': 'more than 30', 'AgeOfPolicyHolder': '26 to 30', 'PolicyType': 'Sedan - All Perils', 'Fault': 'Policy Holder', 'VehiclePrice': 'more than 69000', 'DriverRating': 1, 'Make': 'Honda', 'AccidentArea': 'Urban'}
+2026-02-18 21:10:28,914 [INFO] Prediction result: {'prediction': 'FRAUDULENT', 'fraud_probability': 74.91, 'legitimate_probability': 25.09, 'risk_level': 'HIGH', 'message': 'Manual review required!'}
+2026-02-18 21:24:58,353 [INFO] Health check called
+2026-02-18 21:25:04,134 [INFO] Health check called
+2026-02-18 21:25:05,956 [INFO] Health check called
+2026-02-18 21:25:52,811 [INFO] Health check called
+2026-02-18 21:28:23,811 [WARNING] Unauthorized access attempt with key: None
+2026-02-18 21:31:13,612 [INFO] Prediction request: {'Deductible': 400, 'Days_Policy_Accident': 'more than 30', 'PastNumberOfClaims': 'none', 'Days_Policy_Claim': 'more than 30', 'AgeOfPolicyHolder': '26 to 30', 'PolicyType': 'Sedan - All Perils', 'Fault': 'Policy Holder', 'VehiclePrice': 'more than 69000', 'DriverRating': 1, 'Make': 'Honda', 'AccidentArea': 'Urban'}
+2026-02-18 21:31:13,671 [INFO] Prediction result: {'prediction': 'FRAUDULENT', 'fraud_probability': 74.91, 'legitimate_probability': 25.09, 'risk_level': 'HIGH', 'message': 'Manual review required!'}
+2026-02-19 20:22:22,806 [WARNING] Unauthorized access attempt with key: None
+2026-02-19 20:24:46,994 [INFO] Prediction request: {'Deductible': 400, 'Days_Policy_Accident': 'more than 30', 'PastNumberOfClaims': 'none', 'Days_Policy_Claim': 'more than 30', 'AgeOfPolicyHolder': '26 to 30', 'PolicyType': 'Sedan - All Perils', 'Fault': 'Policy Holder', 'VehiclePrice': 'more than 69000', 'DriverRating': 1, 'Make': 'Honda', 'AccidentArea': 'Urban'}
+2026-02-19 20:24:47,023 [INFO] Prediction result: {'prediction': 'FRAUDULENT', 'fraud_probability': 74.91, 'legitimate_probability': 25.09, 'risk_level': 'HIGH', 'message': 'Manual review required!'}
+2026-02-19 20:26:10,503 [ERROR] Validation error: [{'type': 'int_parsing', 'loc': ('body', 'Deductible'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': 'wrong'}]
+2026-02-19 20:26:25,697 [WARNING] Unauthorized access attempt with key: Honey@14552
+2026-02-19 20:26:53,591 [ERROR] Validation error: [{'type': 'int_parsing', 'loc': ('body', 'Deductible'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': 'wrong'}]
+2026-02-19 20:27:51,472 [INFO] Prediction request: {'Deductible': 400, 'Days_Policy_Accident': 'more than 30', 'PastNumberOfClaims': 'none', 'Days_Policy_Claim': 'more than 30', 'AgeOfPolicyHolder': '26 to 30', 'PolicyType': 'Sedan - All Perils', 'Fault': 'Policy Holder', 'VehiclePrice': 'more than 69000', 'DriverRating': 1, 'Make': 'Honda', 'AccidentArea': 'Urban'}
+2026-02-19 20:27:51,497 [INFO] Prediction result: {'prediction': 'FRAUDULENT', 'fraud_probability': 74.91, 'legitimate_probability': 25.09, 'risk_level': 'HIGH', 'message': 'Manual review required!'}
