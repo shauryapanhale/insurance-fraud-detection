@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# Environment Variables (IMPORTANT - keep secrets safe!)
+.env
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Logs
+*.log
+app.log
+
+# Model files (optional - uncomment if too large for GitHub)
+# *.pkl
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
