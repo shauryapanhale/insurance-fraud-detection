@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 import os
 import logging
+from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
@@ -23,6 +24,20 @@ logging.basicConfig(
 )
 logger = logging.getLogger("fraud_api")
 app = FastAPI(title="Insurance Fraud Detection API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "https://insurance-fraud-detection-system.netlify.app"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
