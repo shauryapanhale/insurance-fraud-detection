@@ -10,6 +10,9 @@ import pandas as pd
 import os
 import logging
 from fastapi.middleware.cors import CORSMiddleware
+from prometheus_fastapi_instrumentator import Instrumentator
+from prometheus_client import Counter, Histogram
+
 
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
@@ -18,12 +21,35 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
-        logging.FileHandler("app.log"),   # logs to app.log file
-        logging.StreamHandler()           # logs to console
+        logging.FileHandler("app.log"),
+        logging.StreamHandler()
     ],
 )
 logger = logging.getLogger("fraud_api")
 app = FastAPI(title="Insurance Fraud Detection API")
+Instrumentator().instrument(app).expose(app)
+
+
+# Custom Prometheus Metrics
+fraud_predictions_counter = Counter(
+    "fraud_predictions_total",
+    "Total number of FRAUDULENT predictions made"
+)
+legit_predictions_counter = Counter(
+    "legit_predictions_total",
+    "Total number of LEGITIMATE predictions made"
+)
+prediction_confidence_histogram = Histogram(
+    "fraud_probability_score",
+    "Distribution of fraud probability scores",
+    buckets=[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+)
+risk_level_counter = Counter(
+    "risk_level_total",
+    "Total predictions grouped by risk level",
+    ["level"]
+)
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -37,10 +63,10 @@ app.add_middleware(
 )
 
 
-
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
+
 # ---------- API Key Validator ----------
 async def verify_api_key(api_key: str = Security(api_key_header)):
     if api_key != API_KEY:
@@ -55,6 +81,7 @@ async def verify_api_key(api_key: str = Security(api_key_header)):
         )
     return api_key
 # ---------------------------------------
+
 
 # ---------- Exception Handlers ----------
 
@@ -100,6 +127,7 @@ async def global_exception_handler(request: Request, exc: Exception):
 
 # ----------------------------------------
 
+
 # Load all model files (from parent directory)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -109,6 +137,7 @@ label_encoders = pickle.load(open(os.path.join(BASE_DIR, 'models/label_encoders.
 feature_names = pickle.load(open(os.path.join(BASE_DIR, 'models/feature_names.pkl'), 'rb'))
 
 print("✅ All models loaded successfully!")
+
 
 # Define input schema
 class ClaimInput(BaseModel):
@@ -124,16 +153,17 @@ class ClaimInput(BaseModel):
     Make: str
     AccidentArea: str
 
+
 # Home route
 @app.get("/")
 def home():
     logger.info("Health check called")
     return {"message": "Insurance Fraud Detection API is running! 🚀"}
 
+
 # Prediction route
 @app.post("/predict")
 def predict(data: ClaimInput, api_key: str = Security(verify_api_key)):
-    # Convert input to dictionary
     logger.info(f"Prediction request: {data.dict()}")
     input_data = data.dict()
 
@@ -167,13 +197,21 @@ def predict(data: ClaimInput, api_key: str = Security(verify_api_key)):
         message = "Can be auto-approved"
 
     result = {
-    "prediction": "FRAUDULENT" if prediction == 1 else "LEGITIMATE",
-    "fraud_probability": fraud_probability,
-    "legitimate_probability": legit_probability,
-    "risk_level": risk_level,
-    "message": message
+        "prediction": "FRAUDULENT" if prediction == 1 else "LEGITIMATE",
+        "fraud_probability": fraud_probability,
+        "legitimate_probability": legit_probability,
+        "risk_level": risk_level,
+        "message": message
     }
+
+    # Update Prometheus custom metrics
+    if prediction == 1:
+        fraud_predictions_counter.inc()
+    else:
+        legit_predictions_counter.inc()
+
+    prediction_confidence_histogram.observe(fraud_probability / 100)
+    risk_level_counter.labels(level=risk_level).inc()
 
     logger.info(f"Prediction result: {result}")
     return result
-

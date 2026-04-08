@@ -54,3 +54,22 @@
 2026-03-03 20:48:26,139 [INFO] Prediction result: {'prediction': 'FRAUDULENT', 'fraud_probability': 58.73, 'legitimate_probability': 41.27, 'risk_level': 'MEDIUM', 'message': 'Additional verification needed'}
 2026-03-03 20:50:33,995 [INFO] Prediction request: {'Deductible': 400, 'Days_Policy_Accident': 'more than 30', 'PastNumberOfClaims': 'none', 'Days_Policy_Claim': 'none', 'AgeOfPolicyHolder': '36 to 40', 'PolicyType': 'Sedan - All Perils', 'Fault': 'Policy Holder', 'VehiclePrice': '20000 to 29000', 'DriverRating': 4, 'Make': 'Honda', 'AccidentArea': 'Rural'}
 2026-03-03 20:50:34,013 [INFO] Prediction result: {'prediction': 'FRAUDULENT', 'fraud_probability': 69.91, 'legitimate_probability': 30.09, 'risk_level': 'MEDIUM', 'message': 'Additional verification needed'}
+2026-04-08 11:11:49,090 [INFO] Health check called
+2026-04-08 11:11:49,165 [WARNING] 404 Not Found: http://127.0.0.1:8000/favicon.ico
+2026-04-08 11:12:00,298 [INFO] Health check called
+2026-04-08 11:12:13,853 [INFO] Health check called
+2026-04-08 11:12:50,856 [WARNING] Unauthorized access attempt with key: None
+2026-04-08 11:13:03,228 [INFO] Prediction request: {'Deductible': 400, 'Days_Policy_Accident': 'more than 30', 'PastNumberOfClaims': 'none', 'Days_Policy_Claim': 'more than 30', 'AgeOfPolicyHolder': '26 to 30', 'PolicyType': 'Sedan - All Perils', 'Fault': 'Policy Holder', 'VehiclePrice': 'more than 69000', 'DriverRating': 1, 'Make': 'Honda', 'AccidentArea': 'Urban'}
+2026-04-08 11:13:03,310 [INFO] Prediction result: {'prediction': 'FRAUDULENT', 'fraud_probability': 74.91, 'legitimate_probability': 25.09, 'risk_level': 'HIGH', 'message': 'Manual review required!'}
+2026-04-08 11:14:26,055 [INFO] Prediction request: {'Deductible': 400, 'Days_Policy_Accident': 'more than 30', 'PastNumberOfClaims': 'none', 'Days_Policy_Claim': 'more than 30', 'AgeOfPolicyHolder': '26 to 30', 'PolicyType': 'Sedan - All Perils', 'Fault': 'Policy Holder', 'VehiclePrice': 'more than 69000', 'DriverRating': 1, 'Make': 'Honda', 'AccidentArea': 'Urban'}
+2026-04-08 11:14:26,108 [INFO] Prediction result: {'prediction': 'FRAUDULENT', 'fraud_probability': 74.91, 'legitimate_probability': 25.09, 'risk_level': 'HIGH', 'message': 'Manual review required!'}
+2026-04-08 11:27:22,667 [WARNING] Unauthorized access attempt with key: None
+2026-04-08 11:27:31,635 [INFO] Prediction request: {'Deductible': 400, 'Days_Policy_Accident': 'more than 30', 'PastNumberOfClaims': 'none', 'Days_Policy_Claim': 'more than 30', 'AgeOfPolicyHolder': '26 to 30', 'PolicyType': 'Sedan - All Perils', 'Fault': 'Policy Holder', 'VehiclePrice': 'more than 69000', 'DriverRating': 1, 'Make': 'Honda', 'AccidentArea': 'Urban'}
+2026-04-08 11:27:31,691 [INFO] Prediction result: {'prediction': 'FRAUDULENT', 'fraud_probability': 74.91, 'legitimate_probability': 25.09, 'risk_level': 'HIGH', 'message': 'Manual review required!'}
+2026-04-08 11:30:18,605 [INFO] Health check called
+2026-04-08 13:00:38,718 [INFO] Health check called
+2026-04-08 13:00:38,773 [WARNING] 404 Not Found: http://127.0.0.1:8000/favicon.ico
+2026-04-08 13:01:26,397 [INFO] Prediction request: {'Deductible': 400, 'Days_Policy_Accident': 'more than 30', 'PastNumberOfClaims': 'none', 'Days_Policy_Claim': 'more than 30', 'AgeOfPolicyHolder': '26 to 30', 'PolicyType': 'Sedan - All Perils', 'Fault': 'Policy Holder', 'VehiclePrice': 'more than 69000', 'DriverRating': 1, 'Make': 'Honda', 'AccidentArea': 'Urban'}
+2026-04-08 13:01:26,448 [INFO] Prediction result: {'prediction': 'FRAUDULENT', 'fraud_probability': 74.91, 'legitimate_probability': 25.09, 'risk_level': 'HIGH', 'message': 'Manual review required!'}
+2026-04-08 13:02:20,056 [INFO] Prediction request: {'Deductible': 400, 'Days_Policy_Accident': 'more than 30', 'PastNumberOfClaims': 'none', 'Days_Policy_Claim': 'more than 30', 'AgeOfPolicyHolder': '26 to 30', 'PolicyType': 'Sedan - All Perils', 'Fault': 'Policy Holder', 'VehiclePrice': 'more than 69000', 'DriverRating': 1, 'Make': 'Honda', 'AccidentArea': 'Urban'}
+2026-04-08 13:02:20,080 [INFO] Prediction result: {'prediction': 'FRAUDULENT', 'fraud_probability': 74.91, 'legitimate_probability': 25.09, 'risk_level': 'HIGH', 'message': 'Manual review required!'}
