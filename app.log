@@ -73,3 +73,5 @@
 2026-04-08 13:01:26,448 [INFO] Prediction result: {'prediction': 'FRAUDULENT', 'fraud_probability': 74.91, 'legitimate_probability': 25.09, 'risk_level': 'HIGH', 'message': 'Manual review required!'}
 2026-04-08 13:02:20,056 [INFO] Prediction request: {'Deductible': 400, 'Days_Policy_Accident': 'more than 30', 'PastNumberOfClaims': 'none', 'Days_Policy_Claim': 'more than 30', 'AgeOfPolicyHolder': '26 to 30', 'PolicyType': 'Sedan - All Perils', 'Fault': 'Policy Holder', 'VehiclePrice': 'more than 69000', 'DriverRating': 1, 'Make': 'Honda', 'AccidentArea': 'Urban'}
 2026-04-08 13:02:20,080 [INFO] Prediction result: {'prediction': 'FRAUDULENT', 'fraud_probability': 74.91, 'legitimate_probability': 25.09, 'risk_level': 'HIGH', 'message': 'Manual review required!'}
+2026-04-09 10:31:08,873 [INFO] Health check called
+2026-04-09 10:31:08,908 [WARNING] 404 Not Found: http://127.0.0.1:8000/favicon.ico
